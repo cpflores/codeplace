@@ -7,16 +7,22 @@ Rails.application.routes.draw do
 
   resources :schools
 
+  # Subscriptions
+  post   "/subscriptions" => "subscriptions#create"
+  put    "/subscriptions" => "subscriptions#update"
+  delete "/subscriptions" => "subscriptions#delete"
+
   # Progresses
   get    "chapters/read" => "progresses#show"
   post   "chapters/mark_as_complete" => "progress#create"
   delete "chapters/mark_as_incomplete" => "progress#delete"
 
   # Users
-  get "/my_current_user" => "users#my_current_user"
-  get "/all_users" => "users#all_users"
+  get   "/my_current_user" => "users#my_current_user"
+  get   "/subscribers" => "users#subscribers"
+  get   "/all_users" => "users#all_users"
   match 'users/:id' => 'users#update_user', via: [:patch]
-  get '/send_password' => "users#reset_password"
+  get   '/send_password' => "users#reset_password"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

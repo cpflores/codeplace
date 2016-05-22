@@ -25,6 +25,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'devise', '~> 3.5', '>= 3.5.10'
 gem 'tiddle', '~> 0.6.0'
+gem 'stripe', '~> 1.43'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -37,6 +38,7 @@ gem 'tiddle', '~> 0.6.0'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+  gem 'dotenv', '~> 2.1', '>= 2.1.1'
 end
 
 group :development do
